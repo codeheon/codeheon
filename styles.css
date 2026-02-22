@@ -1,0 +1,111 @@
+:root {
+  --bg: #090d17;
+  --panel: #141b2c;
+  --text: #e8f0ff;
+  --accent: #47c0ff;
+  --warn: #ffca66;
+  --ok: #6dffb0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #10172b, #070b13 60%);
+  color: var(--text);
+  font-family: Inter, Pretendard, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 100vh;
+}
+
+.hud-panel {
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(20, 27, 44, 0.96), rgba(15, 20, 35, 0.86));
+  border-right: 1px solid #293453;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: #9db0d1;
+}
+
+.controls-grid {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+kbd {
+  background: #1f2a43;
+  border: 1px solid #3f507d;
+  border-radius: 6px;
+  padding: 2px 8px;
+  color: #d7e3ff;
+}
+
+.sliders {
+  margin-top: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: #bbcae6;
+  font-size: 0.9rem;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+.telemetry {
+  margin-top: 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  background: rgba(8, 12, 24, 0.6);
+  border: 1px solid #2a3860;
+  border-radius: 10px;
+  padding: 12px;
+  white-space: pre-line;
+}
+
+.sim-panel {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+canvas {
+  width: min(100%, 1100px);
+  aspect-ratio: 1100 / 680;
+  border: 1px solid #2d3e66;
+  border-radius: 12px;
+  background: #0a0f1b;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .hud-panel {
+    border-right: none;
+    border-bottom: 1px solid #293453;
+  }
+}

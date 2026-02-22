@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic FPV Drone Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hud-panel">
+        <h1>FPV Drone Simulator</h1>
+        <p class="subtitle">Acro 스타일 물리 + 바람 + 배터리 드롭</p>
+        <div class="controls-grid">
+          <div><kbd>W/S</kbd> Pitch (앞/뒤)</div>
+          <div><kbd>A/D</kbd> Roll (좌/우)</div>
+          <div><kbd>Q/E</kbd> Yaw (좌/우)</div>
+          <div><kbd>Shift/Ctrl</kbd> Throttle ↑/↓</div>
+          <div><kbd>R</kbd> Reset</div>
+          <div><kbd>G</kbd> Gate 표시 토글</div>
+        </div>
+        <div class="sliders">
+          <label>
+            Rates (deg/s)
+            <input id="rate" type="range" min="250" max="1200" value="720" />
+          </label>
+          <label>
+            Camera Tilt (deg)
+            <input id="camTilt" type="range" min="5" max="50" value="28" />
+          </label>
+          <label>
+            Wind (m/s)
+            <input id="wind" type="range" min="0" max="12" value="3" />
+          </label>
+        </div>
+        <div id="telemetry" class="telemetry"></div>
+      </section>
+      <section class="sim-panel">
+        <canvas id="view" width="1100" height="680" aria-label="FPV simulator canvas"></canvas>
+      </section>
+    </main>
+    <script src="simulator.js"></script>
+  </body>
+</html>
